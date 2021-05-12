@@ -1,0 +1,12 @@
+# creation rules are evaluated sequentially, the first match wins
+creation_rules:
+        # upon creation of a file inside s3 folder
+        - path_regex: ./s3/*
+          kms: 'arn:aws:kms:us-west-2:167353081226:key/3a90c139-c097-4d8f-a82c-42393e912242'
+
+# Publish the files to S3 bucket
+destination_rules:
+        - s3_bucket: "private-tf-bucket-amazingly-known-tick"
+          path_regex: s3/*
+          recreation_rule:
+              kms: 'arn:aws:kms:us-west-2:167353081226:key/3a90c139-c097-4d8f-a82c-42393e912242'
