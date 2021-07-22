@@ -4,7 +4,7 @@ resource "aws_kms_key" "sops" {
 }
 
 resource "aws_iam_policy" "kms" {
-  name        = "kms-test-policy-1234"
+  name        = "kms-test-policy-34122334"
   description = "SOP S3 policy"
 
   policy = <<EOT
